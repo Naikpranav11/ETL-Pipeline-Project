@@ -57,7 +57,7 @@ The project is designed to extract raw data from CSV files, clean and transform 
    git clone <repository-url>
    cd ETL_Project
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ## ETL Pipeline Workflow
 The ETL pipeline follows these steps:
