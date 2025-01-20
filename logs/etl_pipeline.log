@@ -1,0 +1,414 @@
+2025-01-20 22:11:49,148 - INFO - Starting ETL process...
+2025-01-20 22:11:49,167 - INFO - Data extracted from data/Nat_Gas.csv. Shape: (5953, 2)
+2025-01-20 22:11:50,650 - INFO - Data extracted from data/borrower_data.csv. Shape: (148670, 34)
+2025-01-20 22:11:50,724 - INFO - Data extracted from data/corporateCreditRatingWithFinancialRatios.csv. Shape: (7805, 25)
+2025-01-20 22:11:50,751 - ERROR - Error cleaning data: 'date'
+2025-01-20 22:11:50,751 - INFO - Price data cleaned.
+2025-01-20 22:11:51,328 - ERROR - Error cleaning data: 'date'
+2025-01-20 22:11:51,334 - INFO - Borrower data cleaned.
+2025-01-20 22:11:51,358 - ERROR - Error cleaning data: 'date'
+2025-01-20 22:11:51,358 - INFO - Credit score data cleaned.
+2025-01-20 22:11:51,358 - ERROR - Price data transformation failed.
+2025-01-20 22:11:51,358 - ERROR - Borrower data transformation failed.
+2025-01-20 22:11:51,358 - ERROR - FICO data transformation failed.
+2025-01-20 22:11:51,358 - ERROR - Price data loading skipped due to transformation failure.
+2025-01-20 22:11:51,358 - ERROR - Borrower data loading skipped due to transformation failure.
+2025-01-20 22:11:51,358 - ERROR - FICO data loading skipped due to transformation failure.
+2025-01-20 22:11:51,358 - INFO - ETL process completed successfully.
+2025-01-20 22:13:30,475 - INFO - Starting ETL process...
+2025-01-20 22:13:30,542 - INFO - Data extracted from data/Nat_Gas.csv. Shape: (5953, 2)
+2025-01-20 22:13:32,396 - INFO - Data extracted from data/borrower_data.csv. Shape: (148670, 34)
+2025-01-20 22:13:32,521 - INFO - Data extracted from data/corporateCreditRatingWithFinancialRatios.csv. Shape: (7805, 25)
+2025-01-20 22:13:32,593 - INFO - Raw Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:13:32,605 - INFO - Cleaned Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:13:32,606 - INFO - Price data cleaned.
+2025-01-20 22:13:32,652 - INFO - Raw Data:       ID  year loan_limit             Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV  Region  Security_Type  Status  dtir1
+0  24890  2019         cf  Sex Not Available         nopre     type1           p1  ...  25-34                   to_inst  98.728814   south         direct       1   45.0
+1  24891  2019         cf               Male         nopre     type2           p1  ...  55-64                   to_inst        NaN   North         direct       1    NaN
+2  24892  2019         cf               Male           pre     type1           p1  ...  35-44                   to_inst  80.019685   south         direct       0   46.0
+3  24893  2019         cf               Male         nopre     type1           p4  ...  45-54                  not_inst  69.376900   North         direct       0   42.0
+4  24894  2019         cf              Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544   North         direct       0   39.0
+
+[5 rows x 34 columns]
+2025-01-20 22:13:33,112 - INFO - Cleaned Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:13:33,113 - INFO - Borrower data cleaned.
+2025-01-20 22:13:33,136 - INFO - Raw Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:13:33,172 - INFO - Cleaned Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:13:33,172 - INFO - Credit score data cleaned.
+2025-01-20 22:13:33,177 - INFO - Raw Price Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:13:33,177 - ERROR - Error processing price data: 'date'
+2025-01-20 22:13:33,240 - INFO - Raw Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:13:33,240 - ERROR - Error processing borrower data: 'loan_date'
+2025-01-20 22:13:33,286 - INFO - Raw FICO Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:13:33,286 - ERROR - Error processing FICO score data: 'fico_score'
+2025-01-20 22:13:33,287 - ERROR - Price data loading skipped due to transformation failure.
+2025-01-20 22:13:33,287 - ERROR - Borrower data loading skipped due to transformation failure.
+2025-01-20 22:13:33,287 - ERROR - FICO data loading skipped due to transformation failure.
+2025-01-20 22:13:33,287 - INFO - ETL process completed successfully.
+2025-01-20 22:19:13,448 - INFO - Starting ETL process...
+2025-01-20 22:19:13,501 - INFO - Data extracted from data/Nat_Gas.csv. Shape: (5953, 2)
+2025-01-20 22:19:14,682 - INFO - Data extracted from data/borrower_data.csv. Shape: (148670, 34)
+2025-01-20 22:19:14,803 - INFO - Data extracted from data/corporateCreditRatingWithFinancialRatios.csv. Shape: (7805, 25)
+2025-01-20 22:19:14,850 - INFO - Raw Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:14,862 - INFO - Cleaned Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:14,862 - INFO - Price data cleaned.
+2025-01-20 22:19:14,928 - INFO - Raw Data:       ID  year loan_limit             Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV  Region  Security_Type  Status  dtir1
+0  24890  2019         cf  Sex Not Available         nopre     type1           p1  ...  25-34                   to_inst  98.728814   south         direct       1   45.0
+1  24891  2019         cf               Male         nopre     type2           p1  ...  55-64                   to_inst        NaN   North         direct       1    NaN
+2  24892  2019         cf               Male           pre     type1           p1  ...  35-44                   to_inst  80.019685   south         direct       0   46.0
+3  24893  2019         cf               Male         nopre     type1           p4  ...  45-54                  not_inst  69.376900   North         direct       0   42.0
+4  24894  2019         cf              Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544   North         direct       0   39.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:15,540 - INFO - Cleaned Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:15,540 - INFO - Borrower data cleaned.
+2025-01-20 22:19:15,560 - INFO - Raw Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:15,590 - INFO - Cleaned Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:15,591 - INFO - Credit score data cleaned.
+2025-01-20 22:19:15,595 - INFO - Raw Price Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:15,614 - INFO - Processed Price Data:             Price
+Date             
+1997-01-07   3.82
+1997-01-08   3.80
+1997-01-09   3.61
+1997-01-10   3.92
+1997-01-13   4.00
+2025-01-20 22:19:15,614 - INFO - Natural gas price data processed successfully.
+2025-01-20 22:19:15,647 - INFO - Raw Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:15,706 - INFO - Processed Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:15,706 - INFO - Borrower data processed successfully.
+2025-01-20 22:19:15,758 - INFO - Raw Credit Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:15,812 - INFO - Processed FICO Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:15,812 - INFO - Credit score data processed.
+2025-01-20 22:19:16,617 - INFO - Data loaded into table processed_price_data in the database.
+2025-01-20 22:19:16,618 - INFO - Price data loaded to database.
+2025-01-20 22:19:21,265 - INFO - Data loaded into table processed_borrower_data in the database.
+2025-01-20 22:19:21,266 - INFO - Borrower data loaded to database.
+2025-01-20 22:19:21,845 - INFO - Data loaded into table processed_fico_data in the database.
+2025-01-20 22:19:21,846 - INFO - FICO data loaded to database.
+2025-01-20 22:19:21,846 - INFO - ETL process completed successfully.
+2025-01-20 22:19:49,192 - INFO - Starting ETL process...
+2025-01-20 22:19:49,235 - INFO - Data extracted from data/Nat_Gas.csv. Shape: (5953, 2)
+2025-01-20 22:19:50,065 - INFO - Data extracted from data/borrower_data.csv. Shape: (148670, 34)
+2025-01-20 22:19:50,244 - INFO - Data extracted from data/corporateCreditRatingWithFinancialRatios.csv. Shape: (7805, 25)
+2025-01-20 22:19:50,272 - INFO - Raw Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:50,279 - INFO - Cleaned Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:50,279 - INFO - Price data cleaned.
+2025-01-20 22:19:50,308 - INFO - Raw Data:       ID  year loan_limit             Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV  Region  Security_Type  Status  dtir1
+0  24890  2019         cf  Sex Not Available         nopre     type1           p1  ...  25-34                   to_inst  98.728814   south         direct       1   45.0
+1  24891  2019         cf               Male         nopre     type2           p1  ...  55-64                   to_inst        NaN   North         direct       1    NaN
+2  24892  2019         cf               Male           pre     type1           p1  ...  35-44                   to_inst  80.019685   south         direct       0   46.0
+3  24893  2019         cf               Male         nopre     type1           p4  ...  45-54                  not_inst  69.376900   North         direct       0   42.0
+4  24894  2019         cf              Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544   North         direct       0   39.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:50,859 - INFO - Cleaned Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:50,859 - INFO - Borrower data cleaned.
+2025-01-20 22:19:50,886 - INFO - Raw Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:50,926 - INFO - Cleaned Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:50,927 - INFO - Credit score data cleaned.
+2025-01-20 22:19:50,932 - INFO - Raw Price Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:19:50,957 - INFO - Processed Price Data:             Price
+Date             
+1997-01-07   3.82
+1997-01-08   3.80
+1997-01-09   3.61
+1997-01-10   3.92
+1997-01-13   4.00
+2025-01-20 22:19:50,957 - INFO - Natural gas price data processed successfully.
+2025-01-20 22:19:50,991 - INFO - Raw Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:51,030 - INFO - Processed Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:19:51,030 - INFO - Borrower data processed successfully.
+2025-01-20 22:19:51,060 - INFO - Raw Credit Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:51,215 - INFO - Processed FICO Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:19:51,215 - INFO - Credit score data processed.
+2025-01-20 22:19:51,886 - INFO - Data loaded into table processed_price_data in the database.
+2025-01-20 22:19:51,886 - INFO - Price data loaded to database.
+2025-01-20 22:19:58,203 - INFO - Data loaded into table processed_borrower_data in the database.
+2025-01-20 22:19:58,205 - INFO - Borrower data loaded to database.
+2025-01-20 22:19:59,688 - INFO - Data loaded into table processed_fico_data in the database.
+2025-01-20 22:19:59,689 - INFO - FICO data loaded to database.
+2025-01-20 22:19:59,689 - INFO - ETL process completed successfully.
+2025-01-20 22:20:26,165 - INFO - Starting ETL process...
+2025-01-20 22:20:26,291 - INFO - Data extracted from data/Nat_Gas.csv. Shape: (5953, 2)
+2025-01-20 22:20:27,310 - INFO - Data extracted from data/borrower_data.csv. Shape: (148670, 34)
+2025-01-20 22:20:27,361 - INFO - Data extracted from data/corporateCreditRatingWithFinancialRatios.csv. Shape: (7805, 25)
+2025-01-20 22:20:27,377 - INFO - Raw Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:20:27,386 - INFO - Cleaned Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:20:27,386 - INFO - Price data cleaned.
+2025-01-20 22:20:27,431 - INFO - Raw Data:       ID  year loan_limit             Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV  Region  Security_Type  Status  dtir1
+0  24890  2019         cf  Sex Not Available         nopre     type1           p1  ...  25-34                   to_inst  98.728814   south         direct       1   45.0
+1  24891  2019         cf               Male         nopre     type2           p1  ...  55-64                   to_inst        NaN   North         direct       1    NaN
+2  24892  2019         cf               Male           pre     type1           p1  ...  35-44                   to_inst  80.019685   south         direct       0   46.0
+3  24893  2019         cf               Male         nopre     type1           p4  ...  45-54                  not_inst  69.376900   North         direct       0   42.0
+4  24894  2019         cf              Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544   North         direct       0   39.0
+
+[5 rows x 34 columns]
+2025-01-20 22:20:27,872 - INFO - Cleaned Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:20:27,872 - INFO - Borrower data cleaned.
+2025-01-20 22:20:27,888 - INFO - Raw Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:20:27,909 - INFO - Cleaned Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:20:27,909 - INFO - Credit score data cleaned.
+2025-01-20 22:20:27,912 - INFO - Raw Price Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:20:27,914 - INFO - Processed Price Data:          Date  Price
+0  1997-01-07   3.82
+1  1997-01-08   3.80
+2  1997-01-09   3.61
+3  1997-01-10   3.92
+4  1997-01-13   4.00
+2025-01-20 22:20:27,914 - INFO - Natural gas price data processed successfully.
+2025-01-20 22:20:27,933 - INFO - Raw Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:20:27,956 - INFO - Processed Borrower Data:       ID  year loan_limit Gender approv_in_adv loan_type loan_purpose  ...    age submission_of_application        LTV   Region  Security_Type  Status  dtir1
+2  24892  2019         cf   Male           pre     type1           p1  ...  35-44                   to_inst  80.019685    south         direct       0   46.0
+4  24894  2019         cf  Joint           pre     type1           p1  ...  25-34                  not_inst  91.886544    North         direct       0   39.0
+5  24895  2019         cf  Joint           pre     type1           p1  ...  35-44                  not_inst  70.089286    North         direct       0   40.0
+6  24896  2019         cf  Joint           pre     type1           p3  ...  55-64                   to_inst  79.109589    North         direct       0   44.0
+8  24898  2019         cf  Joint         nopre     type1           p3  ...  55-64                   to_inst  78.765690  central         direct       0   44.0
+
+[5 rows x 34 columns]
+2025-01-20 22:20:27,956 - INFO - Borrower data processed successfully.
+2025-01-20 22:20:27,972 - INFO - Raw Credit Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:20:27,999 - INFO - Processed FICO Data:                         Rating Agency                     Corporation Rating  ... ROI - Return On Investment  Operating Cash Flow Per Share  Free Cash Flow Per Share
+0  Standard & Poor's Ratings Services       American States Water Co.     A-  ...                     4.4530                         1.9957                   -0.1333
+1  Standard & Poor's Ratings Services  Automatic Data Processing Inc.    AAA  ...                    21.8765                         0.2501                    0.3132
+2  Standard & Poor's Ratings Services                      Avnet Inc.   BBB-  ...                     9.6494                        -7.6079                   -7.3231
+3  Standard & Poor's Ratings Services    California Water Service Co.    AA-  ...                     5.1018                         1.7438                   -0.8999
+4  Standard & Poor's Ratings Services            Cardinal Health Inc.      A  ...                     8.1844                         1.9725                    2.4174
+
+[5 rows x 25 columns]
+2025-01-20 22:20:27,999 - INFO - Credit score data processed.
+2025-01-20 22:20:28,527 - INFO - Data loaded into table processed_price_data in the database.
+2025-01-20 22:20:28,527 - INFO - Price data loaded to database.
+2025-01-20 22:20:34,399 - INFO - Data loaded into table processed_borrower_data in the database.
+2025-01-20 22:20:34,403 - INFO - Borrower data loaded to database.
+2025-01-20 22:20:35,692 - INFO - Data loaded into table processed_fico_data in the database.
+2025-01-20 22:20:35,692 - INFO - FICO data loaded to database.
+2025-01-20 22:20:35,692 - INFO - ETL process completed successfully.
